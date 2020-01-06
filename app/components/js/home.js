@@ -18,14 +18,13 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         methods: {
             doAdd() {
-                this.iNum.split(",").forEach(num => {
+                this.iNum.split(",").some(num => {
                     if (Number.isFinite(Number(num))) {
                         this.pArray[this.index] = Math.round(Number(num) * 100) / 100;
                         this.index++;
                     } else {
                         Methods.fAlert("Input is not a valid nubmer!");
-                        this.iNum = "";
-                        return;
+                        return true;
                     }
                 });
                 this.iNum = "";

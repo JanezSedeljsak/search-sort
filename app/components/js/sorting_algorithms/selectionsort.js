@@ -10,10 +10,8 @@ class SelectionSort {
                 if (_array[j] < _array[min_idx])
                     min_idx = j;
 
-            // Swap the found minimum element with the first element  
-            let temp = _array[min_idx];
-            _array[min_idx] = _array[i];
-            _array[i] = temp;
+            // Swap the found minimum element with the first element 
+            [_array[min_idx], _array[i]] = [_array[i], _array[min_idx]]; 
         }
 
         return _array;
