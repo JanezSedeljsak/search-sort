@@ -57,10 +57,10 @@ class Methods {
   };
 
   static gSortB = (_array, _indx) => {
-    return _array.sort();
+    return BubbleSort.sort(_array, _indx);
   };
 
   static gSortQ = (_array, _indx) => {
-
+    return QuickSort.sort(_array, 0, _indx - 1)
   };
 }

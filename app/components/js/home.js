@@ -54,11 +54,13 @@ document.addEventListener("DOMContentLoaded", function () {
             doSort2() {
                 Methods.fAlert(Methods.gSort2(this.pArray, Number(this.index)));
             },
-            doSortB() {
-                Methods.fAlert(Methods.gSortB(this.pArray, Number(this.index)));
+            async doSortB() {
+                let response = await Methods.gSortB(this.pArray, Number(this.index));
+                Methods.fAlert(response.slice(0, Number(this.index)));
             },
-            doSortQ() {
-                Methods.fAlert(Methods.gSortQ(this.pArray, Number(this.index)));
+            async doSortQ() {
+                let response = await Methods.gSortQ(this.pArray, Number(this.index));
+                Methods.fAlert(response.slice(0, Number(this.index)));
             }
         }
     });
