@@ -48,19 +48,19 @@ class Methods {
     } else return "List is not binary!";
   };
 
-  static gSortS = (_array, _indx) => {
-    return SelectionSort.sort(_array, _indx);
-  };
+  static gShuffle(_array, _indx) {
+    for (let i = _indx - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [_array[i], _array[j]] = [_array[j], _array[i]];
+    }
+    return _array;
+  }
 
-  static gSort2 = (_array, _indx) => {
-    return _array.sort();
-  };
+  static gSortS = (_array, _indx) => SelectionSort.sort(_array, _indx);
 
-  static gSortB = (_array, _indx) => {
-    return BubbleSort.sort(_array, _indx);
-  };
+  static gSortI = (_array, _indx) => InsertionSort.sort(_array, _indx);
 
-  static gSortQ = (_array, _indx) => {
-    return QuickSort.sort(_array, 0, _indx - 1)
-  };
+  static gSortB = (_array, _indx) => BubbleSort.sort(_array, _indx);
+
+  static gSortQ = (_array, _indx) => QuickSort.sort(_array, 0, _indx - 1);
 }

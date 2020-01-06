@@ -17,6 +17,7 @@
     <script src="js/sorting_algorithms/quicksort.js"></script>
     <script src="js/sorting_algorithms/bubblesort.js"></script>
     <script src="js/sorting_algorithms/selectionsort.js"></script>
+    <script src="js/sorting_algorithms/insertionsort.js"></script>
 </head>
 
 <body>
@@ -25,10 +26,15 @@
             <div style="margin-bottom: 10px;" class="form-group input-group">
                 <input v-model="iNum" placeholder="Add to array" id="add-to-array" type="text"
                     class="text-white form-control">
-                <button v-on:click="doAdd()" :disabled="iNum == ''" data-toggle="tooltip" style="margin-right: 10px" data-placement="left"
-                    title="Click to add items to array!" type="button" class="btn btn-primary bmd-btn-fab">+</button>
-                <button v-on:click="emptyArray()" :disabled="index < 1" data-toggle="tooltip" data-placement="left"
-                    title="Click to empty the array!" type="button" class="btn btn-dark bmd-btn-fab"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <button v-on:click="doAdd()" :disabled="iNum == ''" data-toggle="tooltip" style="margin-right: 10px"
+                    data-placement="left" title="Click to add items to array!" type="button"
+                    class="btn btn-primary bmd-btn-fab">+</button>
+                <button v-on:click="emptyArray()" :disabled="index < 1" data-toggle="tooltip" style="margin-right: 10px"
+                    data-placement="left" title="Click to empty the array!" type="button"
+                    class="btn btn-dark bmd-btn-fab"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                <button v-on:click="shuffleArray()" :disabled="index < 2" data-toggle="tooltip" data-placement="left"
+                    title="Shuffle the array!" type="button" class="btn btn-dark bmd-btn-fab"><i
+                        class="fas fa-random"></i></button>
             </div>
             <div class="form-group parent-flex">
                 <button v-on:click="doMin()" :disabled="index < 2" type="button"
@@ -52,9 +58,9 @@
             </div>
             <div class="form-group parent-flex">
                 <button v-on:click="doSortS()" :disabled="index < 2" type="button"
-                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Selective Sort</button>
-                <button v-on:click="doSort2()" :disabled="index < 2" type="button"
-                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Sort-i</button>
+                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Selective sort</button>
+                <button v-on:click="doSortI()" :disabled="index < 2" type="button"
+                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Insertion sort</button>
             </div>
             <div class="form-group parent-flex">
                 <button v-on:click="doSortB()" :disabled="index < 2" type="button"
@@ -62,7 +68,7 @@
                 <button v-on:click="doSortQ()" :disabled="index < 2" type="button"
                     class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Quick sort</button>
             </div>
-            <hr style="box-shadow: 0 -1px 0 #b3b3b386;"/>
+            <hr style="box-shadow: 0 -1px 0 #b3b3b386;" />
             <h4 class="text-white">{{ pArray | stringify }}</h4>
         </form>
     </div>
