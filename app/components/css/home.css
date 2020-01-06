@@ -5,6 +5,14 @@ body {
   overflow: hidden;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #eee !important;
+}
+
+button[disabled]:hover {
+    cursor: default !important;
+}
+
 .parent-flex {
     display: flex;
     justify-content: space-between;
@@ -12,4 +20,12 @@ body {
 
 .inline-flex {
     width: 48%;
+}
+
+button {
+    font-family: 'Baloo', cursive;
+}
+
+h4, input {
+    font-family: 'Hind', sans-serif;
 }
