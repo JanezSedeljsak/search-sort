@@ -14,8 +14,9 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="js/util.js"></script>
     <script src="js/home.js"></script>
-    <script src="js/quicksort.js"></script>
-    <script src="js/bubblesort.js"></script>
+    <script src="js/sorting_algorithms/quicksort.js"></script>
+    <script src="js/sorting_algorithms/bubblesort.js"></script>
+    <script src="js/sorting_algorithms/selectionsort.js"></script>
 </head>
 
 <body>
@@ -50,8 +51,8 @@
                     class="btn btn-raised btn-dark inline-flex"><i class="fas fa-question"></i> Binary search</button>
             </div>
             <div class="form-group parent-flex">
-                <button v-on:click="doSort()" :disabled="index < 2" type="button"
-                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Sort</button>
+                <button v-on:click="doSortS()" :disabled="index < 2" type="button"
+                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Selective Sort</button>
                 <button v-on:click="doSort2()" :disabled="index < 2" type="button"
                     class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Sort-i</button>
             </div>

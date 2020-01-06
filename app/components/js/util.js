@@ -48,8 +48,8 @@ class Methods {
     } else return "List is not binary!";
   };
 
-  static gSort = (_array, _indx) => {
-    return _array.sort();
+  static gSortS = (_array, _indx) => {
+    return SelectionSort.sort(_array, _indx);
   };
 
   static gSort2 = (_array, _indx) => {

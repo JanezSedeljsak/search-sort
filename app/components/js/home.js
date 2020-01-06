@@ -48,16 +48,21 @@ document.addEventListener("DOMContentLoaded", function () {
             doIncludesB() {
                 Methods.fAlert(Methods.gIncludesB(this.pArray, Number(this.index), Number(this.iNum)));
             },
-            doSort() {
-                Methods.fAlert(Methods.gSort(this.pArray, Number(this.index)));
+            // selective sort
+            async doSortS() {
+                let response = await Methods.gSortS(this.pArray, Number(this.index));
+                Methods.fAlert(response.slice(0, Number(this.index)));
             },
             doSort2() {
-                Methods.fAlert(Methods.gSort2(this.pArray, Number(this.index)));
+                alert("inactive function");
+                //Methods.fAlert(Methods.gSort(this.pArray, Number(this.index)));
             },
+            // bubble sort
             async doSortB() {
                 let response = await Methods.gSortB(this.pArray, Number(this.index));
                 Methods.fAlert(response.slice(0, Number(this.index)));
             },
+            // quick sort
             async doSortQ() {
                 let response = await Methods.gSortQ(this.pArray, Number(this.index));
                 Methods.fAlert(response.slice(0, Number(this.index)));

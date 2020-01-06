@@ -19,6 +19,7 @@ class QuickSort {
         items[leftIndex] = items[rightIndex];
         items[rightIndex] = temp;
     }
+    
     static partition(items, left, right) {
         var pivot   = items[Math.floor((right + left) / 2)], //middle element
             i       = left, //left pointer
