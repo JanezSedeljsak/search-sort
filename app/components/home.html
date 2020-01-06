@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Search Sort</title>
+    <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
+        integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
+        integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"
+        integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script src="js/home.js"></script>
+</head>
+
+<body>
+    <div style="padding: 35px; overflow: hidden;" id="root">
+        <form>
+            <div style="margin-bottom: 10px" class="form-group input-group">
+                <input v-model="iNum" placeholder="Add to array" id="add-to-array" type="text" class="text-white form-control">
+                <button v-on:click="doAdd()" :disabled="false" data-toggle="tooltip" data-placement="left" title="Click to add items to array!" type="button" class="btn btn-primary bmd-btn-fab">+</button>
+            </div>
+            <div class="form-group parent-flex">
+                <button v-on:click="doMin()" :disabled="false" type="button" class="btn btn-raised btn-primary inline-flex">Min</button>
+                <button v-on:click="doMax()" :disabled="false" type="button" class="btn btn-raised btn-primary inline-flex">Max</button>
+            </div>
+            <div class="form-group parent-flex">
+                <button v-on:click="doSum()" :disabled="false" type="button" class="btn btn-raised btn-primary inline-flex">Sum</button>
+                <button v-on:click="doAvg()" :disabled="false" type="button" class="btn btn-raised btn-primary inline-flex">Avg</button>
+            </div>
+            <div class="form-group parent-flex">
+                <button v-on:click="doIncludes()" :disabled="false" type="button" class="btn btn-raised btn-dark inline-flex">Includes</button>
+                <button v-on:click="doIncludesB()" :disabled="false" type="button" class="btn btn-raised btn-dark inline-flex">Includes-b</button>
+            </div>
+            <div class="form-group parent-flex">
+                <button v-on:click="doSort()" :disabled="false" type="button" class="btn btn-raised btn-secondary inline-flex">Sort</button>
+                <button v-on:click="doSort2()" :disabled="false" type="button" class="btn btn-raised btn-secondary inline-flex">Sort-i</button>
+            </div>
+            <div class="form-group parent-flex">
+                <button v-on:click="doSortB()" :disabled="false" type="button" class="btn btn-raised btn-secondary inline-flex">Bubble-s</button>
+                <button v-on:click="doSortQ()" :disabled="false" type="button" class="btn btn-raised btn-secondary inline-flex">Quick-s</button>
+            </div>
+            <hr />
+            <h4 class="text-white">{{ pArray }}</h4>
+        </form>
+    </div>
+</body>
+
+</html>
