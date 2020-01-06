@@ -4,16 +4,26 @@ document.addEventListener("DOMContentLoaded", function() {
     data: () => {
       return {
         iNum: "",
-        pArray: []
+        index: 0,
+        pArray: new Array(100).fill(null)
       };
+    },
+    filters: {
+      // embeded js methods only for display function
+      stringify: function(value) {
+        let index = value.indexOf(null);
+        let dArray = value.slice(0, index).join(", ");
+        return dArray ? dArray : "Empty Array";
+      }
     },
     methods: {
       doAdd() {
-        if(Number.isFinite(Number(this.iNum)) && this.iNum != "") {
-            this.pArray.push(Number(this.iNum));
-            this.iNum = "";
+        if (Number.isFinite(Number(this.iNum)) && this.iNum != "") {
+          this.pArray[this.index] = Number(this.iNum);
+          this.index++;
+          this.iNum = "";
         } else {
-            Methods.fAlert("Input doesn't contain a nubmer!");
+          Methods.fAlert("Input doesn't contain a nubmer!");
         }
       },
       doMin() {

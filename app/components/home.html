@@ -8,7 +8,7 @@
         href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css"
         integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css">
+    <script src="https://kit.fontawesome.com/748f776e69.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"
         integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U"
         crossorigin="anonymous"></script>
@@ -25,31 +25,45 @@
     <div style="padding: 35px; overflow: hidden;" id="root">
         <form>
             <div style="margin-bottom: 10px" class="form-group input-group">
-                <input v-model="iNum" placeholder="Add to array" id="add-to-array" type="text" class="text-white form-control">
-                <button v-on:click="doAdd()" :disabled="false" data-toggle="tooltip" data-placement="left" title="Click to add items to array!" type="button" class="btn btn-primary bmd-btn-fab">+</button>
+                <input v-model="iNum" placeholder="Add to array" id="add-to-array" type="text"
+                    class="text-white form-control">
+                <button v-on:click="doAdd()" :disabled="false" data-toggle="tooltip" data-placement="left"
+                    title="Click to add items to array!" type="button" class="btn btn-primary bmd-btn-fab">+</button>
             </div>
             <div class="form-group parent-flex">
-                <button v-on:click="doMin()" :disabled="false" type="button" class="btn btn-raised btn-primary inline-flex">Min</button>
-                <button v-on:click="doMax()" :disabled="false" type="button" class="btn btn-raised btn-primary inline-flex">Max</button>
+                <button v-on:click="doMin()" :disabled="false" type="button"
+                    class="btn btn-raised btn-primary inline-flex"><i class="fas fa-minus-square"></i> Min</button>
+                <button v-on:click="doMax()" :disabled="false" type="button"
+                    class="btn btn-raised btn-primary inline-flex"><i class="fas fa-plus-square"></i> Max</button>
             </div>
             <div class="form-group parent-flex">
-                <button v-on:click="doSum()" :disabled="false" type="button" class="btn btn-raised btn-primary inline-flex">Sum</button>
-                <button v-on:click="doAvg()" :disabled="false" type="button" class="btn btn-raised btn-primary inline-flex">Avg</button>
+                <button v-on:click="doSum()" :disabled="false" type="button"
+                    class="btn btn-raised btn-primary inline-flex"><i class="fas fa-sort-numeric-up-alt"></i>
+                    Sum</button>
+                <button v-on:click="doAvg()" :disabled="false" type="button"
+                    class="btn btn-raised btn-primary inline-flex"><i class="fas fa-sort-numeric-up-alt"></i>
+                    Avg</button>
             </div>
             <div class="form-group parent-flex">
-                <button v-on:click="doIncludes()" :disabled="false" type="button" class="btn btn-raised btn-dark inline-flex">Includes</button>
-                <button v-on:click="doIncludesB()" :disabled="false" type="button" class="btn btn-raised btn-dark inline-flex">Includes-b</button>
+                <button v-on:click="doIncludes()" :disabled="false" type="button"
+                    class="btn btn-raised btn-dark inline-flex"><i class="fas fa-question"></i> Includes</button>
+                <button v-on:click="doIncludesB()" :disabled="false" type="button"
+                    class="btn btn-raised btn-dark inline-flex"><i class="fas fa-question"></i> Includes-b</button>
             </div>
             <div class="form-group parent-flex">
-                <button v-on:click="doSort()" :disabled="false" type="button" class="btn btn-raised btn-secondary inline-flex">Sort</button>
-                <button v-on:click="doSort2()" :disabled="false" type="button" class="btn btn-raised btn-secondary inline-flex">Sort-i</button>
+                <button v-on:click="doSort()" :disabled="false" type="button"
+                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Sort</button>
+                <button v-on:click="doSort2()" :disabled="false" type="button"
+                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Sort-i</button>
             </div>
             <div class="form-group parent-flex">
-                <button v-on:click="doSortB()" :disabled="false" type="button" class="btn btn-raised btn-secondary inline-flex">Bubble-s</button>
-                <button v-on:click="doSortQ()" :disabled="false" type="button" class="btn btn-raised btn-secondary inline-flex">Quick-s</button>
+                <button v-on:click="doSortB()" :disabled="false" type="button"
+                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Bubble-s</button>
+                <button v-on:click="doSortQ()" :disabled="false" type="button"
+                    class="btn btn-raised btn-secondary inline-flex"><i class="fas fa-sort"></i> Quick-s</button>
             </div>
             <hr />
-            <h4 class="text-white">{{ pArray }}</h4>
+            <h4 class="text-white">{{ pArray | stringify }}</h4>
         </form>
     </div>
 </body>
