@@ -1,13 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
     new Vue({
         el: "#root",
-        data: () => {
-            return {
-                iNum: "",
-                index: 0,
-                pArray: new Array(100).fill(null)
-            };
-        },
+        data: () => ({
+            iNum: "",
+            index: 0,
+            pArray: new Array(100).fill(null)
+        }),
         filters: {
             // embeded js methods only for display function
             stringify: function (value) {
