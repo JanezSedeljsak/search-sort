@@ -4,8 +4,6 @@
 
 Small school project for searching and sorting arrays
 
-![alt text](https://github.com/JanezSedeljsak/exo-os/blob/master/site.png)
-
 ## Getting Started
 
 > 1. Download the project<br/>
